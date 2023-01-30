@@ -9,7 +9,7 @@ export type Json =
 export interface Database {
   public: {
     Tables: {
-      websites: {
+      Websites: {
         Row: {
           crawlTimestamp: string | null
           h1: string | null

@@ -791,6 +791,11 @@ astring@^1.8.0:
   resolved "https://registry.npmjs.org/astring/-/astring-1.8.4.tgz"
   integrity sha512-97a+l2LBU3Op3bBQEff79i/E4jMD2ZLFD8rHx9B6mXyB2uQwhJQYfiDqUwtfjF4QA1F2qs//N6Cw8LetMbQjcw==
 
+astro-seo-meta@^2.0.0:
+  version "2.0.0"
+  resolved "https://registry.npmjs.org/astro-seo-meta/-/astro-seo-meta-2.0.0.tgz"
+  integrity sha512-T/c1nQQvmYz0Ub04UooYo6JLZux7OaVwYeolWDf9L7RhpaqyWX80lOczSIt19/9mNKZq1hNYRcJBXWOArI36ug==
+
 astro@^2.0.0, astro@^2.0.2:
   version "2.0.2"
   resolved "https://registry.npmjs.org/astro/-/astro-2.0.2.tgz"

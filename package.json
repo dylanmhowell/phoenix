@@ -16,6 +16,7 @@
     "@supabase/supabase-js": "^2.5.0",
     "@types/canvas-confetti": "^1.4.3",
     "astro": "^2.0.2",
+    "astro-seo-meta": "^2.0.0",
     "autoprefixer": "^10.4.13",
     "canvas-confetti": "^1.5.1",
     "postcss": "^8.4.21",
