@@ -1,21 +1,38 @@
 ---
 // Component Imports
-import Button from '../components/Button.astro';
+import { __astro_tag_component__ } from 'astro/dist/runtime/server';
+import Button from '../components/Button.astro'
+// import { createClient } from '@supabase/supabase-js'
+import { supabase } from "../supabaseClient";
 
-// Full Astro Component Syntax:
-// https://docs.astro.build/core-concepts/astro-components/
+// const supabaseUrl = import.meta.env.SUPABASE_URL;
+// const supabaseKey = import.meta.env.SUPABASE_KEY;
+
+const response = await fetch('https://ocfxiawlekfbcamtegct.supabase.co/rest/v1');
+
+const { data, error } = await supabase
+  .from('Users')
+  .select('name')
+  .limit(1);
 ---
 
 <html lang="en">
-	<head>
+<head>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width" />
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<meta name="generator" content={Astro.generator} />
-		<title>Astro + TailwindCSS</title>
-	</head>
+		<title>Project Phoenix</title>
+</head>
 
 	<body>
+			<div class="grid place-items-center h-screen content-center">
+		<h1 class="font-bold text-xl content-center"> Project Phoenix</h1>
+		<ul>
+			{data.users}
+		</ul>
+	
+</div>
 		<div class="grid place-items-center h-screen content-center">
 			<Button>Tailwind Button in Astro!</Button>
 			<a href="/markdown-page" class="p-4 underline">Markdown is also supported...</a>
