@@ -1,43 +1,12 @@
 ---
 // Component Imports
 import { __astro_tag_component__ } from 'astro/dist/runtime/server';
-import Button from '../components/Button.astro'
-import { supabase } from "../supabaseClient";
+import Main from '../layouts/main.astro';
 import Websites from '../components/Websites.astro';
 import Hero from '../components/Hero.astro';
-
-// let { data: websites, error } = await supabase
-//   .from("websites")
-//   .select("url, searchTerm, ranking")
-//   .eq('searchTerm', 'Tuscaloosa wedding photographer')
-
-// if (error) {
-//   console.error(error);
-//   throw error;
-// }
-
-
+import Header from '../components/Header.astro';
 ---
 
-<html lang="en" data-theme="cupcake">
-<head>
-		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Project Phoenix</title>
-</head>
-	<body>
-			<!-- <div class="grid place-items-center h-screen content-center">
-		<h1 class="font-bold text-xl content-centert text-slate-900"> Project Phoenix</h1></div> -->
-		<!-- <ul>
-			{websites?.map((url) => (
-			  <li><span class="font-extrabold text-secondary">The website:</span> <a href=" {url.url} ">{url.url}</a> <span class="font-extrabold">ranks in position</span> {url.ranking} for <span class="font-extrabold"> "{url.searchTerm}"</span></li>
-			))} 
-		  </ul> -->
-
-	<Hero />
-	<Websites />
-	
-	</body>
-</html>
+<Main title='Welcome to Project Phoenix'>
+	<p>Homepage content goes here.</p>
+</Main>
