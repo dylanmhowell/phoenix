@@ -1,0 +1,43 @@
+---
+import { supabase } from "../supabaseClient";
+import Card from "./Card.astro";
+
+let { data: websites, error } = await supabase
+  .from("websites")
+  .select("url, searchTerm, ranking")
+  .eq('searchTerm', 'Tuscaloosa wedding photographer')
+
+if (error) {
+  console.error(error);
+  throw error;
+};
+---
+
+<section class="websites">
+	<div class="container">
+		{websites?.map((url) => (
+			<Card url={url.url} ranking={url.ranking} searchTerm={url.searchTerm} />
+				// <h3>The website: {url.url}</h3> 
+				// <p>ranks in position {url.ranking}</p> 
+				// <p>for {url.searchTerm}</p>
+				// </div>
+		  ))} 
+	</div>
+</section>
+
+<style>
+    .websites .container {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-gap: 20px;
+        padding: 0 20px;
+        margin: 30px auto;
+    }
+
+    @media (max-width: 500px) {
+        .features .container {
+            grid-template-columns: 1fr;
+        }
+    }
+
+</style>
