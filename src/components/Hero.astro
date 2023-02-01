@@ -1,45 +1,51 @@
 ---
 export interface Props {
-    heading?: string;
-    text?: string;
+  heading?: string;
+  text?: string;
 }
 
-const { heading = "Welcome to Project Phoenix!",
-text="The top photographer directory for SEO nerds." } = Astro.props as Props;
+const {
+  heading = "Welcome to Project Phoenix!",
+  text = "The top photographer directory for SEO nerds.",
+} = Astro.props as Props;
 ---
 
 <section class="hero">
-    <div class="hero-text">
-        <h1>{heading}</h1>
-        <p>
-            {text}
-        </p>
-    </div>
+  <div class="hero-text">
+    <h1>{heading}</h1>
+    <p>
+      {text}
+    </p>
+  </div>
 </section>
 
 <style>
- .hero {
-    height:auto;
+  .hero {
+    height: auto;
     background-color: var(--secondary);
-    background-image: linear-gradient(to bottom, var(--primary), rgb(15 23 42 / 0));
+    background-image: linear-gradient(
+      to bottom,
+      var(--primary),
+      rgb(15 23 42 / 0)
+    );
     padding: 30px;
- }
+  }
 
- .hero-text {
+  .hero-text {
     max-width: 500px;
     color: darkslategray;
     text-align: center;
     margin: 50px auto;
- }
+  }
 
- .hero h1 {
+  .hero h1 {
     font-size: 50px;
     color: #00393c;
     margin-bottom: 20px;
- }
+  }
 
- .hero p {
+  .hero p {
     font-size: large;
     margin-bottom: 20px;
- }
+  }
 </style>
