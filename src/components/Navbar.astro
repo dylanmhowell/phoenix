@@ -1,0 +1,54 @@
+---
+const items = [
+  {
+    title: "Home",
+    path: "/",
+  },
+  {
+    title: "Blog",
+    path: "/blog",
+  },
+  {
+    title: "About",
+    path: "/about",
+  },
+  {
+    title: "Directory",
+    path: "/directory",
+  },
+  {
+    title: "For Photographers",
+    path: "/seo-for-photographers",
+  },
+];
+---
+
+<div class="navbar bg-base-100">
+  <div class="flex-1">
+    <a class="btn-ghost btn text-xl normal-case">Phoenix</a>
+  </div>
+  <div class="flex-none gap-2">
+    <div class="form-control">
+      <input type="text" placeholder="Search" class="input-bordered input" />
+    </div>
+    <div class="dropdown-end dropdown">
+      <label tabindex="0" class="btn-ghost btn-circle avatar btn">
+        <div class="w-10 rounded-full">
+          <img src="src/images/stock-photo.jpg" />
+        </div>
+      </label>
+      <ul
+        tabindex="0"
+        class="dropdown-content menu rounded-box menu-compact mt-3 w-52 bg-base-100 p-2 shadow"
+      >
+        {
+          items.map((item) => (
+            <li>
+              <a href={item.path}>{item.title}</a>
+            </li>
+          ))
+        }
+      </ul>
+    </div>
+  </div>
+</div>
