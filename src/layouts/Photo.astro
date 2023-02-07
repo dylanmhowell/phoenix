@@ -1,0 +1,50 @@
+---
+import { Image, Picture } from "@astrojs/image/components";
+import Header from "../components/Header.astro";
+import { SEO } from "astro-seo";
+
+export interface Props {
+  title: string;
+  description: string;
+  date?: string;
+  coverImage?: string;
+}
+
+const { title, description, coverImage, date } =
+  (Astro.props.frontmatter as Props) || (Astro.props as Props);
+const imageUrl =
+  "https://dylanmhowell.com/wp-content/uploads/2021/08/yachats-elopement-oregon-coast-81-1-2048x1280.jpg";
+---
+
+<html lang="en" data-theme="cupcake">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="generator" content={Astro.generator} />
+    <SEO>
+      title={title + " | Cool Photographer Directory"}, openGraph={
+        {
+          basic: {
+            title: title,
+            type: "website",
+            image: "/favicon.svg",
+          },
+          image: { alt: "Cool photographer website favicon" },
+        }
+      }
+      description={description}
+    </SEO>
+  </head>
+  <body>
+    <Header />
+    <Picture
+      src={imageUrl}
+      widths={[200, 400, 800]}
+      aspectRatio="4:3"
+      sizes="(max-width: 800px) 100vw, 800px"
+      alt="wedding couple"
+    />
+    <slot />
+  </body>
+</html>

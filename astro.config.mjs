@@ -6,8 +6,17 @@ import tailwind from '@astrojs/tailwind';
 import vercel from "@astrojs/vercel/serverless";
 
 // https://astro.build/config
+import image from "@astrojs/image";
+
+// https://astro.build/config
+import sitemap from "@astrojs/sitemap";
+
+// https://astro.build/config
 export default defineConfig({
-  integrations: [mdx(), tailwind()],
+  site: 'http://127.0.0.1:3000/',
+  integrations: [mdx(), tailwind(), image({
+    serviceEntryPoint: '@astrojs/image/sharp'
+  }), sitemap()],
   vite: {
     server: {
       watch: {
@@ -15,6 +24,6 @@ export default defineConfig({
       }
     }
   },
-  output: "server",
+  output: "static",
   adapter: vercel()
 });
